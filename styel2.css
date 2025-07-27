@@ -1,0 +1,76 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(lblue.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.quiz {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    width: 400px;
+    margin: 50px auto;
+    text-align: left;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(38, 113, 225);
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+button {
+    background-color: lightskyblue;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0;
+    width: 48%;
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover {
+    background-color: rgb(61, 239, 248);
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    transform: translate(-0.1rem);
+    transition: transform 150ms;
+}
+
+p {
+    color: rgb(38, 113, 225);
+    font-weight: bold;
+}
+
+textarea::placeholder,
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}

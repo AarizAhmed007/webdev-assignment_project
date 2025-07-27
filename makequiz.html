@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create quiz</title>
+        <link rel="stylesheet" href="styel2.css">
+    </head>
+    <body>
+        <div class="quiz">
+            <div class="title">
+                <label for="quiz"></label>
+                <input type="text" id="quiz-title" placeholder="Title of your quiz" value="Quiz">
+
+                <label for="desc"><p>Description<p></label>
+                <textarea id="desc" placeholder="Enter the description"></textarea><br>
+            </div>
+
+            <div id="questions-container">
+                <div class="form">
+                    <label for="question1">Question 1:</label>
+                    <textarea id="question1" placeholder="Enter question" required></textarea><br>
+
+                    <label for="option1-1">Option 1</label>
+                    <input type="text" id="option1-1" placeholder="Enter option" required><br>
+
+                    <label for="option1-2">Option 2</label>
+                    <input type="text" id="option1-2" placeholder="Enter option" required><br>
+
+                    <label for="option1-3">Option 3</label>
+                    <input type="text" id="option1-3" placeholder="Enter option" required><br>
+
+                    <label for="option1-4">Option 4</label>
+                    <input type="text" id="option1-4" placeholder="Enter option" required><br>
+                </div>
+            </div>
+
+            <button id="add-question" type="button">Add question</button>
+            <button id="submit-quiz" type="button">Submit</button>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

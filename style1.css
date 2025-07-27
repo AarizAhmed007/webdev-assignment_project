@@ -1,0 +1,50 @@
+body {
+    background-image: url(primg.jpg);
+    background-position: center;
+    /*background-size: cover;*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    overflow: hidden;/*diable scrooling*/
+}
+.login-container {
+
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+label, input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    background-color: #2e15aa;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover {
+    background-color: #301ed0;
+}

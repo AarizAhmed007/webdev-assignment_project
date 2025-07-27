@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Attempt Quiz</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-image: url(lblue.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            .quiz-container {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+                width: 50%;
+                margin: 50px auto;
+                text-align: left;
+            }
+            h1 {
+                color: rgb(38, 113, 225);
+            }
+            button {
+                background-color: lightskyblue;
+                color: white;
+                border: none;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+                margin-top: 10px;
+            }
+            button:hover {
+                background-color: rgb(61, 239, 248);
+                box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+                transform: translate(-0.1rem);
+                transition: transform 150ms;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="quiz-container">
+            <h1 id="quiz-title">Quiz Title</h1>
+            <p id="quiz-description">Quiz Description</p>
+            <div id="quiz-questions">
+                <!-- Questions will be dynamically added here -->
+            </div>
+            <button id="submit-quiz" type="button">Submit Quiz</button>
+        </div>
+
+        <script src="quiz.js"></script>
+    </body>
+</html>

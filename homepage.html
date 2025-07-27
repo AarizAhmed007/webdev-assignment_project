@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home page</title>
+        <style>
+            body {
+                background-image: url(lblue.jpg);
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            header {
+            background: linear-gradient(to right, rgb(5, 30, 80), rgb(20, 80, 160));
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            }
+
+            footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(to left, rgb(5, 30, 80), rgb(20, 80, 160));
+                color: white;
+                text-align: left;
+                padding: 10px 20px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            header .title {
+                margin: 0;
+            }
+            header .signout-button {
+                background-color: lightskyblue;
+                color: white;
+                border: none;
+                padding: 8px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            header .signout-button:hover {
+                background-color: rgb(61, 239, 248);
+                box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+                transform: translate(-0.1rem);
+                transition: transform 150ms;
+            }
+            h1 {
+                margin-top: 5%;
+                color: rgb(38, 113, 225);
+            }
+            button {
+                background-color: lightskyblue;
+                color: white;
+                border: none;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 10%;
+                margin: 10px;
+            }
+            button:hover {
+                background-color: rgb(61, 239, 248);
+                box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+                transform: translate(-0.1rem);
+                transition: transform 150ms;
+            }
+            .quiz-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                margin: 20px;
+                padding: 0;
+            }
+            .quiz-box {
+                background: white; /* White background for the cards */
+                padding: 15px;
+                border-radius: 10px;
+                width: 250px;
+                box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+                text-align: center; /* Center-align text inside the card */
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center; /* Center-align content horizontally */
+            }
+            .quiz-box h3 {
+                color: rgb(38, 113, 225);
+                margin: 0 0 10px;
+            }
+            .quiz-box p {
+                margin: 0 0 10px;
+                color: #333;
+            }
+            .quiz-box button {
+                width: 80%; /* Reduce button width for better centering */
+                padding: 8px;
+                background-color: lightskyblue;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 10px; /* Add spacing above the button */
+            }
+            .quiz-box button:hover {
+                background-color: rgb(61, 239, 248);
+                box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+                transform: translate(-0.1rem);
+                transition: transform 150ms;
+            }
+ 
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="title">Quizzr</div>
+            <button class="signout-button" onclick="signOut()">Sign Out</button>
+        </header>
+        <h1>Quick quiz</h1>
+        <form action="makequiz.html">
+            <button type="submit">Create quiz</button>
+        </form>
+        <button id="clear-quizzes" type="button">Clear All Quizzes</button>
+        <div id="quiz-list" class="quiz-list">
+            <!-- Quizzes will be dynamically added here -->
+        </div>
+        <script>
+            // Dynamically load quizzes from localStorage
+            document.addEventListener("DOMContentLoaded", function () {
+                const quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
+                const quizList = document.getElementById("quiz-list");
+        
+                quizzes.forEach((quiz, index) => {
+                    const quizBox = document.createElement("div");
+                    quizBox.classList.add("quiz-box");
+        
+                    quizBox.innerHTML = `
+                        <h3>${quiz.title}</h3>
+                        <p>${quiz.description}</p>
+                        <button onclick="attemptQuiz(${index})">Attempt Quiz</button>
+                    `;
+        
+                    quizList.appendChild(quizBox);
+                });
+            });
+        
+            // Clear all quizzes
+            document.getElementById("clear-quizzes").addEventListener("click", function () {
+                localStorage.removeItem("quizzes");
+                location.reload();
+            });
+        
+            // Redirect to attempt quiz page
+            function attemptQuiz(index) {
+                localStorage.setItem("currentQuizIndex", index);
+                window.location.href = `quiz.html?quizIndex=${index}`;
+            }
+        
+            function signOut() {
+                // Redirect to the login page
+                window.location.href = "project_login.html";
+            }
+        </script>
+        <script>
+            function signOut() {
+                // Redirect to the login page
+                window.location.href = "project_login.html";
+            }
+        </script>
+        <footer>
+            &copy; 2025 Quizzr. All rights reserved.
+        </footer>
+    </body>
+</html>
